@@ -10,13 +10,24 @@ namespace PicoPlacaPredictor.Control
     {
         public Control()
         {
-
+           
         }
-        //when button is clicked it should check for the last digit // must the plate number be of 4 numbers? ive seen 3 right?
 
-        //date should determine if its mon-fri //check date if its ordered as its suppossed to be// can i add a calendar? should be possible
+        //when btn is clicked it should check for the last digit 
+        // must the plate number be of 4 numbers? ive seen 3 right?
+        public int DayOfWeek(string date)
+        {
+            //splits the date when it finds '/'
+            string[] splitedDate = date.Split('/');
+
+            //converts the array into a datetime to get a datetime and see which date of the week it is
+            DateTime dateTime = new DateTime(int.Parse(splitedDate[2]), int.Parse(splitedDate[1]), int.Parse(splitedDate[0]));
+           
+            //gets the day of the week//sun = 0,mon=1, tues = 2, wed = 3, thurs = 4, fri = 5, sat = 6
+            int s = (int)dateTime.DayOfWeek;
+            return s;
+        }
         
-
 
         //check for time boundaries // 7:00 to 9:30//16:00 to 19:30// should i add an option for am/pm?//verify if its in the time range, like 23:59 cant be 24:61
         public bool TimeValidation(string time)
