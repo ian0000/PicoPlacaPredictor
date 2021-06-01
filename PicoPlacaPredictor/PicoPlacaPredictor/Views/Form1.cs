@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,9 @@ namespace PicoPlacaPredictor
             //date should determine if its mon-fri //check date if its ordered as its suppissed to be// can i add a calendar? should be possible
             //check for time boundaries // 7:00 to 9:30//16:00 to 19:30// should i add an option for am/pm?
             //message box for the output
+            Control.Control control = new Control.Control();
+            System.Console.WriteLine(control.TimeValidation(txtTime.Text));
+
 
         }
 
