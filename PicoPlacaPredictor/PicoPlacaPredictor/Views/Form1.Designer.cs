@@ -96,6 +96,7 @@ namespace PicoPlacaPredictor
             // txtTime
             // 
             this.txtTime.Location = new System.Drawing.Point(105, 110);
+            this.txtTime.MaxLength = 5;
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(223, 20);
             this.txtTime.TabIndex = 5;
@@ -104,6 +105,7 @@ namespace PicoPlacaPredictor
             // txtDate
             // 
             this.txtDate.Location = new System.Drawing.Point(105, 67);
+            this.txtDate.MaxLength = 10;
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(223, 20);
             this.txtDate.TabIndex = 4;
@@ -112,6 +114,7 @@ namespace PicoPlacaPredictor
             // txtPlateNumber
             // 
             this.txtPlateNumber.Location = new System.Drawing.Point(105, 30);
+            this.txtPlateNumber.MaxLength = 4;
             this.txtPlateNumber.Name = "txtPlateNumber";
             this.txtPlateNumber.Size = new System.Drawing.Size(223, 20);
             this.txtPlateNumber.TabIndex = 3;

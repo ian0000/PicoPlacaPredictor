@@ -31,6 +31,10 @@ namespace PicoPlacaPredictor.Control
         //as there are 5  option i should control with a switch the different options
         public bool ValidCarDay(int plate, int dayOfWeek)
         {
+
+            //gets the last digit of the int 
+            int lastDigit = plate%(10);
+
             //if the car can circulate its true//else false?
             bool resultado = true;
             switch (dayOfWeek)
@@ -40,7 +44,7 @@ namespace PicoPlacaPredictor.Control
 
                 //the license plate number not allowed this days are 1 ^ 2
                 case 1:
-                    if(plate == 1 || plate == 2)
+                    if(lastDigit == 1 || lastDigit == 2)
                     {
                         resultado = false;
                     }
@@ -48,7 +52,7 @@ namespace PicoPlacaPredictor.Control
 
                 //the license plate number not allowed this days are 3 ^ 4
                 case 2:
-                    if (plate == 3 || plate == 4)
+                    if (lastDigit == 3 || lastDigit == 4)
                     {
                         resultado = false;
                     }
@@ -57,7 +61,7 @@ namespace PicoPlacaPredictor.Control
 
                 //the license plate number not allowed this days are 5 ^ 6
                 case 3:
-                    if (plate == 5 || plate == 6)
+                    if (lastDigit == 5 || lastDigit == 6)
                     {
                         resultado = false;
                     }
@@ -66,7 +70,7 @@ namespace PicoPlacaPredictor.Control
 
                 //the license plate number not allowed this days are 7 ^ 8
                 case 4:
-                    if (plate == 7 || plate == 8)
+                    if (lastDigit == 7 || lastDigit == 8)
                     {
                         resultado = false;
                     }
@@ -75,7 +79,7 @@ namespace PicoPlacaPredictor.Control
 
                 //the license plate number not allowed this days are 9 ^ 0 
                 case 5:
-                    if (plate == 9 || plate == 0)
+                    if (lastDigit == 9 || lastDigit == 0)
                     {
                         resultado = false;
                     }
@@ -98,13 +102,12 @@ namespace PicoPlacaPredictor.Control
             //verifies the hour ranges 7 to 9 //16 to 19
             if ((int.Parse(split[0]) <= 9 && int.Parse(split[0]) >= 7) || (int.Parse(split[0]) <= 19 && int.Parse(split[0]) >= 16))
             {
-
                 //verifies if the time is 9 or 19 if the minute its lower than 30
                 if ((int.Parse(split[0]) == 9 || int.Parse(split[0]) == 19) && int.Parse(split[1]) <= 30)
                 {
                     return true;
                 }
-                else if ((int.Parse(split[0]) == 9 || int.Parse(split[0]) <= 19) && int.Parse(split[1]) > 30)
+                else if ((int.Parse(split[0]) == 9  || int.Parse(split[0]) == 19) && int.Parse(split[1]) > 30)
                 {
                     return false;
                 }
