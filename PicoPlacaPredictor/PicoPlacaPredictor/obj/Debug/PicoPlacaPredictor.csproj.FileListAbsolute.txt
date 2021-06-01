@@ -1,0 +1,10 @@
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\obj\Debug\PicoPlacaPredictor.csprojAssemblyReference.cache
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\obj\Debug\PicoPlacaPredictor.Properties.Resources.resources
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\obj\Debug\PicoPlacaPredictor.Form1.resources
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\obj\Debug\PicoPlacaPredictor.csproj.GenerateResource.cache
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\obj\Debug\PicoPlacaPredictor.csproj.CoreCompileInputs.cache
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\bin\Debug\PicoPlacaPredictor.exe.config
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\bin\Debug\PicoPlacaPredictor.exe
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\bin\Debug\PicoPlacaPredictor.pdb
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\obj\Debug\PicoPlacaPredictor.exe
+C:\Users\Niko\source\repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaPredictor\obj\Debug\PicoPlacaPredictor.pdb
