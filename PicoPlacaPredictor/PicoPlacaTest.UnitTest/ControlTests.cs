@@ -8,6 +8,8 @@ namespace PicoPlacaTest.UnitTest
     [TestClass]
     public class ControlTests
     {
+        //--------day of week validation----------
+
         //test in case the values of date is out of a normal date range
         [TestMethod]
         public void DayOfWeek_DateOffRange_Returns7()
@@ -41,6 +43,8 @@ namespace PicoPlacaTest.UnitTest
             }
             Assert.IsTrue(solution);
         }
+
+        //--------Time validation----------
 
         //in case the time is out of a normal time range
         [TestMethod]
@@ -181,6 +185,205 @@ namespace PicoPlacaTest.UnitTest
 
             //assert
             Assert.AreEqual(result, 1);
+        }
+
+        //--------plate number allowed validation----------
+
+        //plate numbers 1,2 are not allowed to be in the road in the day 1 
+        [TestMethod]
+        public void ValidaCarDay_Plate12Day1_ReturnsFalse()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int plateDigit = random.Next(1, 2); 
+
+            //act
+            var result = control.ValidCarDay(plateDigit,1);
+
+            //assert
+            Assert.IsFalse(result);
+        }
+
+        //plate numbers 1,2 are  allowed to be in the road in any day but 1 
+        [TestMethod]
+        public void ValidaCarDay_Plate12AnyDay_ReturnsTrue()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int plateDigit = random.Next(1, 2);
+            int day = random.Next(2, 6);
+
+            //act
+            var result = control.ValidCarDay(plateDigit, day);
+
+            //assert
+            Assert.IsTrue(result);
+        }
+
+        //plate numbers 3,4 are not allowed to be in the road in the day 2 
+        [TestMethod]
+        public void ValidaCarDay_Plate34Day2_ReturnsFalse()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int plateDigit = random.Next(3, 4);
+
+            //act
+            var result = control.ValidCarDay(plateDigit, 2);
+
+            //assert
+            Assert.IsFalse(result);
+        }
+
+        //plate numbers 3,4 are  allowed to be in the road in any day but 2 
+        [TestMethod]
+        public void ValidaCarDay_Plate34AnyDay_ReturnsTrue()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int plateDigit = random.Next(3, 4);
+            int day = random.Next(3, 6);
+
+            //act
+            var result = control.ValidCarDay(plateDigit, day);
+
+            //assert
+            Assert.IsTrue(result);
+        }
+
+
+        //plate numbers 5,6 are not allowed to be in the road in the day 3 
+        [TestMethod]
+        public void ValidaCarDay_Plate56Day3_ReturnsFalse()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int plateDigit = random.Next(5, 6);
+
+            //act
+            var result = control.ValidCarDay(plateDigit, 3);
+
+            //assert
+            Assert.IsFalse(result);
+        }
+
+        //plate numbers 5,6 are  allowed to be in the road in any day but 3 
+        [TestMethod]
+        public void ValidaCarDay_Plate56AnyDay_ReturnsTrue()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int plateDigit = random.Next(3, 4);
+            int day = random.Next(4, 6);
+
+            //act
+            var result = control.ValidCarDay(plateDigit, day);
+
+            //assert
+            Assert.IsTrue(result);
+        }
+
+
+        //plate numbers 7,8 are not allowed to be in the road in the day 4 
+        [TestMethod]
+        public void ValidaCarDay_Plate78Day4_ReturnsFalse()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int plateDigit = random.Next(7, 8);
+
+            //act
+            var result = control.ValidCarDay(plateDigit, 4);
+
+            //assert
+            Assert.IsFalse(result);
+        }
+
+        //plate numbers 7,8 are  allowed to be in the road in any day but 4 
+        [TestMethod]
+        public void ValidaCarDay_Plate78AnyDay_ReturnsTrue()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int plateDigit = random.Next(7, 8);
+            int day = random.Next(0, 3);
+
+            //act
+            var result = control.ValidCarDay(plateDigit, day);
+
+            //assert
+            Assert.IsTrue(result);
+        }
+
+
+        //plate numbers 9 is not allowed to be in the road in the day 5
+        [TestMethod]
+        public void ValidaCarDay_Plate9Day5_ReturnsFalse()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+
+            //act
+            var result = control.ValidCarDay(9, 5);
+
+            //assert
+            Assert.IsFalse(result);
+        }
+
+        //plate numbers 9 is  allowed to be in the road in any day but 5 
+        [TestMethod]
+        public void ValidaCarDay_Plate9AnyDay_ReturnsTrue()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int day = random.Next(0, 4);
+
+            //act
+            var result = control.ValidCarDay(9, day);
+
+            //assert
+            Assert.IsTrue(result);
+        }
+
+        //plate numbers 0 is not allowed to be in the road in the day 5
+        [TestMethod]
+        public void ValidaCarDay_Plate0Day5_ReturnsFalse()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+
+            //act
+            var result = control.ValidCarDay(9, 5);
+
+            //assert
+            Assert.IsFalse(result);
+        }
+
+        //plate numbers 0 is  allowed to be in the road in any day but 5 
+        [TestMethod]
+        public void ValidaCarDay_Plate0AnyDay_ReturnsTrue()
+        {
+            //arrange
+            var control = new Control();
+            Random random = new Random();
+            int day = random.Next(0, 4);
+
+            //act
+            var result = control.ValidCarDay(0, day);
+
+            //assert
+            Assert.IsTrue(result);
         }
     }
 }
