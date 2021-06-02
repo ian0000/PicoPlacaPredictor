@@ -15,6 +15,7 @@ namespace PicoPlacaPredictor
     {
 
         Control.Control control = new Control.Control();
+
         public Form1()
         {
             InitializeComponent();
@@ -27,20 +28,41 @@ namespace PicoPlacaPredictor
             //check for time boundaries // 7:00 to 9:30//16:00 to 19:30// should i add an option for am/pm?
             //message box for the output
 
+            //im missing verifications for date and hour .
+            
             //1. verifies if time is in "pico y placa" range
-            if (control.TimeValidation(txtTime.Text) == true)
+            string time = mtxtTime.Text;
+
+            int timeValidation = control.TimeValidation(time);
+            //2. gets the day of the week//need to check if its in the right order and the right spliter
+            int dayofWeek = control.DayOfWeek(mtxtDate.Text);
+
+            if (timeValidation == 1 && dayofWeek != 7)
             {
 
-                //2. gets the day of the week//need to check if its in the right order and the right spliter
                 //3. check the plate numbers
-                bool result = control.ValidCarDay(int.Parse(txtPlateNumber.Text),control.DayOfWeek(txtDate.Text));
-                if(result == true)
+                bool result = control.ValidCarDay(int.Parse(txtPlateNumber.Text), dayofWeek);
+                if (result == true)
                 {
                     MessageBox.Show("You can be in the road with that plate number");
                 }
                 else
                 {
                     MessageBox.Show("You should wait a bit more to be in the road with that plate number");
+                }                
+            }else if (timeValidation == 3)
+            {
+                MessageBox.Show("The Time is not valid");
+            }
+            else
+            {
+                if (dayofWeek == 7)
+                {
+                        MessageBox.Show("The date is out of the right range");
+                }
+                if (timeValidation == 2)
+                {
+                    MessageBox.Show("You can go out the PICO&PLACA is not up yet");
                 }
             }
 
@@ -55,6 +77,24 @@ namespace PicoPlacaPredictor
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+
+        //This is the "catch" for the masktextbox it already prevents some things like in case the imput is bigger than it should be or if it has some unauthorized caracters
+        private void mtxtDate_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (mtxtDate.MaskFull)
+            {
+                
+                MessageBox.Show("You cannot enter any more data into the date field. Delete some characters in order to insert more data.");
+            }
+            else if (e.Position == mtxtDate.Mask.Length)
+            {
+                MessageBox.Show("You cannot add extra characters to the end of this date field.");
+            }
+            else
+            {
+                MessageBox.Show("You can only add numeric characters (0-9) into this date field.");
             }
         }
     }

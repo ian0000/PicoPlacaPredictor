@@ -33,11 +33,11 @@ namespace PicoPlacaPredictor
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnVerify = new System.Windows.Forms.Button();
-            this.txtTime = new System.Windows.Forms.TextBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
-            this.txtPlateNumber = new System.Windows.Forms.TextBox();
+            this.mtxtTime = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtDate = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnVerify = new System.Windows.Forms.Button();
+            this.txtPlateNumber = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,10 +70,10 @@ namespace PicoPlacaPredictor
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.mtxtTime);
+            this.panel1.Controls.Add(this.mtxtDate);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.btnVerify);
-            this.panel1.Controls.Add(this.txtTime);
-            this.panel1.Controls.Add(this.txtDate);
             this.panel1.Controls.Add(this.txtPlateNumber);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
@@ -82,6 +82,33 @@ namespace PicoPlacaPredictor
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(710, 363);
             this.panel1.TabIndex = 3;
+            // 
+            // mtxtTime
+            // 
+            this.mtxtTime.Location = new System.Drawing.Point(105, 110);
+            this.mtxtTime.Mask = "00:00";
+            this.mtxtTime.Name = "mtxtTime";
+            this.mtxtTime.Size = new System.Drawing.Size(100, 20);
+            this.mtxtTime.TabIndex = 11;
+            this.mtxtTime.ValidatingType = typeof(System.DateTime);
+            this.mtxtTime.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtDate_MaskInputRejected);
+            // 
+            // mtxtDate
+            // 
+            this.mtxtDate.Location = new System.Drawing.Point(105, 74);
+            this.mtxtDate.Mask = "00/00/0000";
+            this.mtxtDate.Name = "mtxtDate";
+            this.mtxtDate.Size = new System.Drawing.Size(97, 20);
+            this.mtxtDate.TabIndex = 10;
+            this.mtxtDate.ValidatingType = typeof(System.DateTime);
+            this.mtxtDate.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtDate_MaskInputRejected);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(254, 71);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 7;
             // 
             // btnVerify
             // 
@@ -93,40 +120,15 @@ namespace PicoPlacaPredictor
             this.btnVerify.UseVisualStyleBackColor = true;
             this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
             // 
-            // txtTime
-            // 
-            this.txtTime.Location = new System.Drawing.Point(105, 110);
-            this.txtTime.MaxLength = 5;
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(223, 20);
-            this.txtTime.TabIndex = 5;
-            this.txtTime.Text = "HH:MM";
-            // 
-            // txtDate
-            // 
-            this.txtDate.Location = new System.Drawing.Point(105, 67);
-            this.txtDate.MaxLength = 10;
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(223, 20);
-            this.txtDate.TabIndex = 4;
-            this.txtDate.Text = "DD/MM/AAAA";
-            // 
             // txtPlateNumber
             // 
             this.txtPlateNumber.Location = new System.Drawing.Point(105, 30);
             this.txtPlateNumber.MaxLength = 4;
             this.txtPlateNumber.Name = "txtPlateNumber";
-            this.txtPlateNumber.Size = new System.Drawing.Size(223, 20);
+            this.txtPlateNumber.Size = new System.Drawing.Size(97, 20);
             this.txtPlateNumber.TabIndex = 3;
             this.txtPlateNumber.Text = "###";
             this.txtPlateNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlateNumber_KeyPress);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(381, 68);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 7;
             // 
             // Form1
             // 
@@ -149,10 +151,10 @@ namespace PicoPlacaPredictor
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnVerify;
-        private System.Windows.Forms.TextBox txtTime;
-        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtPlateNumber;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.MaskedTextBox mtxtDate;
+        private System.Windows.Forms.MaskedTextBox mtxtTime;
     }
 }
 

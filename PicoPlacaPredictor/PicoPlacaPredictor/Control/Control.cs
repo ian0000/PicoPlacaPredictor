@@ -20,12 +20,21 @@ namespace PicoPlacaPredictor.Control
             //splits the date when it finds '/'
             string[] splitedDate = date.Split('/');
 
-            //converts the array into a datetime to get a datetime and see which date of the week it is//formate for datetime AAAA,mm,dd
-            DateTime dateTime = new DateTime(int.Parse(splitedDate[2]), int.Parse(splitedDate[1]), int.Parse(splitedDate[0]));
-           
-            //gets the day of the week//sun = 0,mon=1, tues = 2, wed = 3, thurs = 4, fri = 5, sat = 6
-            int dayOfWeek = (int)dateTime.DayOfWeek;
-            return dayOfWeek;
+            // verifies if the day and month are correct 
+            if (int.Parse(splitedDate[0]) >= 1 && int.Parse(splitedDate[0]) <= 31 && int.Parse(splitedDate[1]) >= 1 && int.Parse(splitedDate[1]) <= 12 )
+            {
+
+                //converts the array into a datetime to get a datetime and see which date of the week it is//formate for datetime AAAA,mm,dd
+                DateTime dateTime = new DateTime(int.Parse(splitedDate[2]), int.Parse(splitedDate[1]), int.Parse(splitedDate[0]));
+
+                //gets the day of the week//sun = 0,mon=1, tues = 2, wed = 3, thurs = 4, fri = 5, sat = 6
+                int dayOfWeek = (int)dateTime.DayOfWeek;
+                return dayOfWeek;
+            }
+            else
+            {
+                return 7;
+            }
         }
         
         //as there are 5  option i should control with a switch the different options
@@ -94,32 +103,43 @@ namespace PicoPlacaPredictor.Control
         }
 
         //check for time boundaries // 7:00 to 9:30//16:00 to 19:30// should i add an option for am/pm?//verify if its in the time range, like 23:59 cant be 24:61
-        public bool TimeValidation(string time)
+        public int TimeValidation(string time)
         {
+            //ill return 3 cases, 1 = is in range for the pico y placa, 2 = is not, 3 = is not in the time range
             //splits the time string in : so i can verify both hour and min individually  
             string[] split = time.Split(':');
 
-            //verifies the hour ranges 7 to 9 //16 to 19
-            if ((int.Parse(split[0]) <= 9 && int.Parse(split[0]) >= 7) || (int.Parse(split[0]) <= 19 && int.Parse(split[0]) >= 16))
+            //verifies if its in the right range
+            if(int.Parse(split[0]) <= 23 && int.Parse(split[0]) >= 0 && int.Parse(split[1]) <= 59 && int.Parse(split[1]) >= 0)
             {
-                //verifies if the time is 9 or 19 if the minute its lower than 30
-                if ((int.Parse(split[0]) == 9 || int.Parse(split[0]) == 19) && int.Parse(split[1]) <= 30)
+
+                //verifies the hour ranges 7 to 9 //16 to 19
+                if ((int.Parse(split[0]) <= 9 && int.Parse(split[0]) >= 7) || (int.Parse(split[0]) <= 19 && int.Parse(split[0]) >= 16))
                 {
-                    return true;
-                }
-                else if ((int.Parse(split[0]) == 9  || int.Parse(split[0]) == 19) && int.Parse(split[1]) > 30)
-                {
-                    return false;
+                    //verifies if the time is 9 or 19 if the minute its lower than 30
+                    if ((int.Parse(split[0]) == 9 || int.Parse(split[0]) == 19) && int.Parse(split[1]) <= 30)
+                    {
+                        return 1;
+                    }
+                    else if ((int.Parse(split[0]) == 9 || int.Parse(split[0]) == 19) && int.Parse(split[1]) > 30)
+                    {
+                        return 2;
+                    }
+                    else
+                    {
+                        return 1;
+                    }
                 }
                 else
                 {
-                    return true;
+                    return 2;
                 }
             }
             else
             {
-                return false;
+                return 3;
             }
+            
         }
     }
 }
