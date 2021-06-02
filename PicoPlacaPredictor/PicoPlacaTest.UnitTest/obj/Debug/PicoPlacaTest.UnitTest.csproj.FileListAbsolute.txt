@@ -1,0 +1,17 @@
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\PicoPlacaTest.UnitTest.dll
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\PicoPlacaTest.UnitTest.pdb
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\PicoPlacaPredictor.exe
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\PicoPlacaPredictor.pdb
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\PicoPlacaPredictor.exe.config
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\obj\Debug\PicoPlacaTest.UnitTest.csprojAssemblyReference.cache
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\obj\Debug\PicoPlacaTest.UnitTest.csproj.CoreCompileInputs.cache
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\obj\Debug\PicoPlacaTest.UnitTest.csproj.CopyComplete
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\obj\Debug\PicoPlacaTest.UnitTest.dll
+C:\Users\Niko\Source\Repos\ian0000\PicoPlacaPredictor\PicoPlacaPredictor\PicoPlacaTest.UnitTest\obj\Debug\PicoPlacaTest.UnitTest.pdb
