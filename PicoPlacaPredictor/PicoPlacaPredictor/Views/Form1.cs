@@ -13,22 +13,18 @@ namespace PicoPlacaPredictor
 {
     public partial class Form1 : Form
     {
-
         Control.Control control = new Control.Control();
-
         public Form1()
         {
+
             InitializeComponent();
         }
-
         private void btnVerify_Click(object sender, EventArgs e)
         {
             //when button is clicked it should check for the last digit // must the plate number be of 4 numbers? ive seen 3 right?
             //date should determine if its mon-fri //check date if its ordered as its suppissed to be// can i add a calendar? should be possible
             //check for time boundaries // 7:00 to 9:30//16:00 to 19:30// should i add an option for am/pm?
             //message box for the output
-
-            //im missing verifications for date and hour .
             
             //1. verifies if time is in "pico y placa" range
             string time = mtxtTime.Text;
@@ -85,7 +81,6 @@ namespace PicoPlacaPredictor
         {
             if (mtxtDate.MaskFull)
             {
-                
                 MessageBox.Show("You cannot enter any more data into the date field. Delete some characters in order to insert more data.");
             }
             else if (e.Position == mtxtDate.Mask.Length)
@@ -96,6 +91,11 @@ namespace PicoPlacaPredictor
             {
                 MessageBox.Show("You can only add numeric characters (0-9) into this date field.");
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            mtxtDate.Text = dateTimePicker1.Text;
         }
     }
 }
